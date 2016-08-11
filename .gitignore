@@ -3,3 +3,4 @@ playground.ipynb
 .ipynb_checkpoints/
 datasets/*
 models/
+.python-version
