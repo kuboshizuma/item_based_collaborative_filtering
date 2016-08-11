@@ -5,11 +5,10 @@
 - Python 3.5
 - click ( for progress bar )
 - scikit-learn ( only for saving model )
-
+- numpy
+- scipy
 
 ## Installation
-
-
 
 ```
 $ git clone https://github.com/kuboshizuma/item_based_collaborative_filtering
