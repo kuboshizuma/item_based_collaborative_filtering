@@ -5,7 +5,7 @@ import sys
 
 def main(user_id):
     reco = Recommendation()
-    print(reco.getRecommendItems(user_id)[0:50])
+    reco.getRecommendItems(user_id)
 
 if __name__ == '__main__':
     params = sys.argv

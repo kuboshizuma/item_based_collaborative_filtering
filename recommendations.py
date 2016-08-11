@@ -69,6 +69,15 @@ class Recommendation(object):
         self.ratings = result
 
 
+    # display recommendation decorated for visibility
+    def __displayDecoratedRecommendation(self, rankings, n=50):
+        recommend_items = rankings[0:n]
+        print("RecommendRanking: title ( score )")
+        print("------------------------")
+        for i, item in enumerate(recommend_items, 1):
+            print("{0}: {1} ( {2} )".format(i, item[1], item[0]))
+
+
     # calculate similarity between items and save created model
     def calculateSimilarityOfItems(self, n=10):
         result = {}
@@ -88,7 +97,7 @@ class Recommendation(object):
 
 
     # recommend items to one person
-    def getRecommendItems(self, user):
+    def getRecommendItems(self, user, n=50):
         if not user in self.ratings: sys.exit("Waring: The user cannot be found.")
         if not os.path.isfile("models/item_match"): sys.exit("Warning: cannot find model. You can use set_model.py for creating model.")
 
@@ -117,4 +126,4 @@ class Recommendation(object):
         rankings = [(score/total_similarity[item], item) for item, score in scores.items()]
 
         rankings.sort(reverse=True)
-        return rankings
+        self.__displayDecoratedRecommendation(rankings, n=n)
