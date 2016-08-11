@@ -55,8 +55,7 @@ class Recommendation(object):
     # get somethig similar to one target
     def __topSimilarRanking(self, target, n=10):
         scores =[(self.__pearsonCorrelation(target, other), other) for other in self.ratings if other!=target]
-        scores.sort()
-        scores.reverse()
+        scores.sort(reverse=True)
         return scores[0:n]
 
 
@@ -117,6 +116,5 @@ class Recommendation(object):
 
         rankings = [(score/total_similarity[item], item) for item, score in scores.items()]
 
-        rankings.sort()
-        rankings.reverse()
+        rankings.sort(reverse=True)
         return rankings
