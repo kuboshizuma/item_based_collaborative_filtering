@@ -11,7 +11,7 @@
 ## Installation
 
 ```
-$ git clone https://github.com/kuboshizuma/item_based_collaborative_filtering
+$ git clone https://github.com/kuboshizuma/item_based_collaborative_filtering.git
 ```
 
 
