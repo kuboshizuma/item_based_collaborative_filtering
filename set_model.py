@@ -3,7 +3,11 @@
 from recommendations import Recommendation
 import os.path
 
-if not os.path.isdir('models'):
-    os.makedirs('models')
-reco = Recommendation()
-reco.calculateSimilarityOfItems(n=50)
+def setModel():
+    if not os.path.isdir('models'):
+        os.makedirs('models')
+    reco = Recommendation()
+    reco.calculateSimilarityOfItems(n=50)
+
+if __name__ == '__main__':
+    setModel()
